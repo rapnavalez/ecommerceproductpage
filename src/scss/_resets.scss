@@ -22,10 +22,8 @@ body {
     font-family: $font-family;
     max-width: 1440px;
     width: 100%;
-
-    @media (max-width: 400px) {
-        max-width: 375px;
-    }
+    padding: 0 5%;
+    margin: 0 auto;
 }
 
 html {
