@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 0;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+body {
+    font-family: $font-family;
+    max-width: 1440px;
+    width: 100%;
+
+    @media (max-width: 400px) {
+        max-width: 375px;
+    }
+}
+
+html {
+    font-size: $font-size;
+}
