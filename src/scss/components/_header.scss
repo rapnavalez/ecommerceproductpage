@@ -163,6 +163,7 @@ header {
             padding: 20px;
             background-color: $white;
             box-shadow: -1px 1px 39px 1px hsla(0, 0%, 0%, .4);
+            z-index: 1000;
 
             @media (max-width: 400px) {
                 right: 20px;
@@ -230,6 +231,10 @@ header {
         align-items: center;
         justify-content: center;
         gap: 20px;
+
+        &:first-child {
+            margin-top: 10px;
+        }
 
         .item-details-wrapper {
             width: 100%;
