@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import Lightbox from '../components/Lightbox.js'
 import { itemDetailsContext } from '../ItemDetailsContext'
 import products from './data'
 
@@ -7,16 +8,7 @@ export default function ProductPage() {
   const [stateItemDetails, setStateItemDetails] = itemDetails
   const [itemCount, setItemCount] = useState(1)
 
-  // const addItemsToCart = () => {
-  //   products.map(product => 
-  //     setStateItemDetails(prev => [...prev, {
-  //       ...product,
-  //       "itemCount": itemCount
-  //     }])
-  //   )
-  // }
 
-    // TBU
     const addItemsToCart = () => {
       if(stateItemDetails.length > 0) {
         products.map(product => {
@@ -50,32 +42,38 @@ export default function ProductPage() {
     }
   }
 
+  const { closeLightbox, activeImage } = useContext(itemDetailsContext)
+  const [stateCloseLightBox, setStateCloseLightBox] = closeLightbox
+  const [stateActiveImage, setStateActiveImage] = activeImage
+
+  const open = () => {
+    setStateCloseLightBox(false)
+  }
+
+  const changeActiveImage = (e) => {
+    setStateActiveImage(e.target.src)
+    document.querySelectorAll('.product-alt-view-image').forEach(image=> image.classList.remove('selected-image'))
+    e.target.classList.add('selected-image')
+  }
 
   return (
 
-    
+
     <section className='container'>
       <div className='product-display'>
-        <img className='product-image-active' src='./images/image-product-1.jpg'/>
+        <img onClick={open} className='product-image-active' src={stateActiveImage}/>
         <div className='product-alt-view'>
-          <div className='product-alt-view-wrapper selected-alt'>
-            <img className='product-alt-view-image' src='./images/image-product-1-thumbnail.jpg'/>
-          </div>
-          <div className='product-alt-view-wrapper'>
-            <img className='product-alt-view-image' src='./images/image-product-2-thumbnail.jpg'/>
-          </div>
-          <div className='product-alt-view-wrapper'>
-            <img className='product-alt-view-image' src='./images/image-product-3-thumbnail.jpg'/>
-          </div>
-          <div className='product-alt-view-wrapper'>
-            <img className='product-alt-view-image' src='./images/image-product-4-thumbnail.jpg'/>
-          </div>
-          
+
+            <img onClick={changeActiveImage} className='product-alt-view-image selected-image' src='./images/image-product-1.jpg'/>
+            <img onClick={changeActiveImage} className='product-alt-view-image' src='./images/image-product-2.jpg'/>
+            <img onClick={changeActiveImage} className='product-alt-view-image' src='./images/image-product-3.jpg'/>
+            <img onClick={changeActiveImage} className='product-alt-view-image' src='./images/image-product-4.jpg'/>
+            
         </div>
       </div>
 
 
-
+    <Lightbox />
 
 
 

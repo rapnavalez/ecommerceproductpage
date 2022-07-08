@@ -1,0 +1,118 @@
+.product-display-lightbox {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgba($black, .65);
+    z-index: 999;
+
+    @media (max-width: 767.98px) {
+        position: unset;
+        width: 100%;
+        background-color: unset;
+        z-index: 1;
+    }
+    
+    .active-lightbox-container {
+        width: 40%;
+        height: 500px;
+        position: relative;
+
+        @media (max-width: 767.98px) {
+            width: 100%;
+        }
+
+        .lightbox-close-btn, .previous-btn, .next-btn {
+            position: absolute;
+            z-index: 1001;
+            cursor: pointer;
+        }
+
+        .lightbox-close-btn {
+            top: -40px;
+            right: 0px;
+
+                @media (max-width: 767.98px) {display: none;}
+        }
+
+        .previous-btn {
+            top: 50%;
+            left: -30px;
+            transform: translateY(-50%);
+            background-color: $white;
+            padding: 20px 23px;
+            border-radius: 50%;
+
+            @media (max-width: 767.98px) {
+                left: 10px;
+            }
+        }
+
+        .next-btn {
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            background-color: $white;
+            padding: 20px 23px;
+            border-radius: 50%;
+
+            @media (max-width: 767.98px) {
+                right: 10px;
+            }
+        }
+        
+        .product-image-active-lightbox {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            cursor: pointer;
+
+            @media (max-width: 767.98px) {
+                border-radius: 0px;
+            }
+        }  
+    }
+
+    .product-alt-view-lightbox {
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 767.98px) {
+                display: none;
+            }
+
+
+        .product-alt-view-image-lightbox {
+            border-radius: 15px;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover {
+                opacity: .65;
+            }
+
+        }
+
+        .selected-image {
+            border: 2px solid $primary-orange;
+            opacity: .65;
+        }
+    }
+
+}
+
+
+.close-lightbox {
+    display: none;
+}
