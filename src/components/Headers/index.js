@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <header>
-        <img className='burger' src={`./images/${isMenuOpen ? 'icon-close' : 'icon-menu'}.svg`} onClick={()=>setIsMenuOpen(prev => !prev)} />
+        <img className='burger' src={`./images/${isMenuOpen ? 'icon-close' : 'icon-menu'}.svg`} onClick={()=>setIsMenuOpen(prev => !prev)} alt="menu"/>
         <h1 className='logo'>sneakers</h1>
         <nav className={`nav ${isMenuOpen && 'menu-open'}`}>
             <ul className='menu'>
@@ -52,7 +52,7 @@ export default function Header() {
                     {isCartEmpty ? <h3 className='cart-empty'>Your cart is empty.</h3> : <CartItems /> }
                 </div>
             </div>
-            <img className='avatar' src='./images/image-avatar.png' />
+            <img className='avatar' src='./images/image-avatar.png' alt="avatar"/>
         </div>
     </header>
   )

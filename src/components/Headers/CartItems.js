@@ -28,12 +28,12 @@ export default function CartItems() {
         {stateItemDetails.map(item => 
 
             <div className='item-details-wrapper' key={item.productId}>
-                <img className='item-thumbnail' src={item.productThumbnail} />
+                <img className='item-thumbnail' src={item.productThumbnail} alt="shoes-img"/>
                 <div className='item-name-amount-total'>
                     <h4 className='item-name'>{item.productName}</h4>
                     <span className='amount-count-total'>${(item.productPrice*item.productDiscount).toFixed(2)} x {item.itemCount} <strong>${((item.productPrice*item.productDiscount)*(item.itemCount)).toFixed(2)}</strong></span>
                 </div>
-                <img onClick={deleteCartItem} name={item.productId} className='delete-icon' src='./images/icon-delete.svg'/>
+                <img onClick={deleteCartItem} name={item.productId} className='delete-icon' src='./images/icon-delete.svg' alt="delete-icon"/>
             </div>
 
         )}

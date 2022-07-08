@@ -79,16 +79,16 @@ export default function Lightbox() {
       <div className={`product-display-lightbox ${stateCloseLightBox && 'close-lightbox'}`}>
         <div className='active-lightbox-container'>
           <svg onClick={close} className='lightbox-close-btn' width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#FFF" fillRule="evenodd"/></svg>
-          <img onClick={previous} className='previous-btn' src='./images/icon-previous.svg'/>
-          <img className='product-image-active-lightbox' src={stateActiveImage}/>
-          <img onClick={next}  className='next-btn' src='./images/icon-next.svg'/>
+          <img onClick={previous} className='previous-btn' src='./images/icon-previous.svg' alt="previous-btn"/>
+          <img className='product-image-active-lightbox' src={stateActiveImage} alt="shoes-img"/>
+          <img onClick={next}  className='next-btn' src='./images/icon-next.svg' alt="next-btn"/>
         </div>
       
         <div className='product-alt-view-lightbox'>
-            <img onClick={changeActiveLightboxImage} className='product-alt-view-image-lightbox' src='./images/image-product-1.jpg'/>
-            <img onClick={changeActiveLightboxImage} className='product-alt-view-image-lightbox' src='./images/image-product-2.jpg'/>
-            <img onClick={changeActiveLightboxImage} className='product-alt-view-image-lightbox' src='./images/image-product-3.jpg'/>
-            <img onClick={changeActiveLightboxImage} className='product-alt-view-image-lightbox' src='./images/image-product-4.jpg'/>
+            <img onClick={changeActiveLightboxImage} className='product-alt-view-image-lightbox' src='./images/image-product-1.jpg' alt="shoes-img"/>
+            <img onClick={changeActiveLightboxImage} className='product-alt-view-image-lightbox' src='./images/image-product-2.jpg' alt="shoes-img"/>
+            <img onClick={changeActiveLightboxImage} className='product-alt-view-image-lightbox' src='./images/image-product-3.jpg' alt="shoes-img"/>
+            <img onClick={changeActiveLightboxImage} className='product-alt-view-image-lightbox' src='./images/image-product-4.jpg' alt="shoes-img"/>
         </div>
       </div>
   )
